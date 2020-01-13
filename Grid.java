@@ -102,7 +102,7 @@ public class Grid {
 			if (!grid[randomRow][randomCol].isBomb()) {
 				grid[randomRow][randomCol].setBomb();
 				allBombs.add(grid[randomRow][randomCol]);
-				System.out.printf("BOMB PLACED AT [%d][%d]\n", randomRow, randomCol);
+				System.out.printf("BOMB PLACED AT [%d][%d]\n", randomRow+1, randomCol+1);
 			}
 		}
 	}
@@ -160,7 +160,6 @@ public class Grid {
 
 				if ((cellsOpened + bombs) == totalCells) {
 					for (int i = 0; i < allBombs.size(); i++) {
-						System.out.println("her");
 						allBombs.get(i).open(0);
 					}
 					System.out.println("nice job, you found all the bombs!");
@@ -171,8 +170,6 @@ public class Grid {
 				printGrid();
 			}
 		}
-		// System.out.println("cellsOpened = "+cellsOpened+", tot bombs = "+bombs);
-
 	}
 
 	public void showAll() {
